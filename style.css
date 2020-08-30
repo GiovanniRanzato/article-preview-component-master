@@ -7,11 +7,6 @@ body {
     font-size: 13px;
     color: hsl(217, 19%, 35%)
 }
-.bold {
-    font-weight: 700;
-}
-
-
 
 /* CUSTOM CLASSES */
 .mainContainer {
@@ -27,6 +22,7 @@ body {
     display: flex;
     flex-flow: column;
     width: 330px;
+    overflow: hidden;
 }
 /* MEDIA  */
 .articleMedia {
@@ -41,7 +37,7 @@ body {
 }
 /* PREVIEW */
 .articleBody {
-    padding: 40px 35px 21px 35px
+    padding: 40px 35px 0 35px
 }
 .articleBodyTitle{
     font-weight: 700;
@@ -49,46 +45,116 @@ body {
     margin-bottom: 24px;
 }
 .articleBodyText{
-    margin-bottom: 32px;
+    margin-bottom: 20px;
     color: hsl(214, 17%, 51%);
     
 }
-/* AUTHOR */
-.articleBodyFooter{
+/* FOOTER  */
+.articleFooter{
+    padding: 10px 35px 10px 35px;
     display: flex;
     flex-flow: row;
+    justify-content: space-between;
     position: relative;
 }
-.articleBodyFooterAvatar{
+/* AUTHOR */
+.articleFooterAvatar{
+    display: flex;
+    flex-flow: row;
+}
+.articleFooterAvatarImg{
     width: 40px;
     height: 40px;
     border-radius: 20px;
 }
-.articleBodyFooterText{
+.articleFooterText{
    margin-left: 18px;
 }
-.articleBodyFooterTextAuthor{
+.articleFooterTextAuthor{
     font-weight: 700;
 }
-.articleBodyFooterDate{
+.articleFooterDate{
    color: hsl(214, 17%, 51%)
  }
- .articleBodyFooterShare{
-     position: absolute;
-     right:0;
-     bottom:0;
-     width: 30px;
-     height: 30px;
-     margin:5px;
-     border-radius: 15px;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     background-color: hsl(210, 46%, 95%);
+ /* SHARE TOGGLER BUTTON */
+.articleFooterShare{
+    position: absolute;
+    right: 35px;
+    z-index: 2;
+    width: 30px;
+    height: 30px;
+    margin:5px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(210, 46%, 95%);
+    transition: background-color 1s;
+}
+.articleFooterShare:hover{
+    background-color: hsl(217, 19%, 35%)
+}
 
- }
+.articleFooterShareActive{
+    background-color: hsl(210, 46%, 95%);
+}
+.articleFooterShareActive:hover{
+    background-color: hsl(212, 23%, 69%);
+}
+
+
+
+/* SHARE ICONS */
+.articleFooterIcons{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    width: calc(100% - 70px);
+    height: 100%;
+    border-radius: 0 0 10px 10px;
+    padding: 0 35px 0 35px;
+    background-color: hsl(214, 17%, 51%);
+    color:#fff;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    transition: bottom 0.5s ease-in;
+
+}
+.shareText{
+    letter-spacing: 3px;
+    margin-right: 20px;
+    user-select: none;
+}
+.shareButton {
+    display: flex;
+    min-width: 30px;
+    height: 30px;
+    margin: 2px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: background-color 1s ease-out;
+}
+.shareButton:hover {
+    background-color: hsl(212, 23%, 69%);
+}
+
+
 
 
 /* FOOTER */
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+
+/* UTILITY */
+.bold {
+    font-weight: 700;
+}
+.button {
+    cursor: pointer;
+}
+.articleFooterIconsHide {
+    bottom: -100px;
+}

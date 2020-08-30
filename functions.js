@@ -1,3 +1,4 @@
+let toggleShare = false;
 const data = {
     cover: "./images/drawers.jpg",
     title: "Shift the overall look and feel by adding these wonderful touches to furniture in your home",
@@ -9,6 +10,13 @@ const data = {
 document.getElementById("articleMediaImg-1").setAttribute("src", data.cover);
 document.getElementById("articleBodyTit-1").innerHTML = data.title;
 document.getElementById("articleBodyTex-1" ).innerHTML = data.text;
-document.getElementById("articleBodyFooterTextAuth-1").innerHTML = data.author;
-document.getElementById("articleBodyFooterTextDat-1").innerHTML = data.date;
-document.getElementById("articleBodyFooter-1").setAttribute("src", data.authorAvatar);
+document.getElementById("articleFooterTextAuth-1").innerHTML = data.author;
+document.getElementById("articleFooterTextDat-1").innerHTML = data.date;
+document.getElementById("articleFooter-1").setAttribute("src", data.authorAvatar);
+
+function toggleShareHandler (){
+    var icons = document.querySelector('#articleFooterIco-1');
+    icons.classList.toggle('articleFooterIconsHide');
+    var toggler = document.querySelector('#articleFooterSha-1');
+    toggler.classList.toggle('articleFooterShareActive');
+}
