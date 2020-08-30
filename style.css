@@ -42,12 +42,17 @@ body {
 .articleBodyTitle{
     font-weight: 700;
     font-size: 16px;
-    margin-bottom: 24px;
+    max-height: 80px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .articleBodyText{
+    height: 70px;
     margin-bottom: 20px;
     color: hsl(214, 17%, 51%);
-    
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 /* FOOTER  */
 .articleFooter{
@@ -120,7 +125,6 @@ body {
     flex-flow: row;
     align-items: center;
     transition: bottom 0.5s ease-in;
-
 }
 .shareText{
     letter-spacing: 3px;
@@ -141,11 +145,8 @@ body {
     background-color: hsl(212, 23%, 69%);
 }
 
-
-
-
 /* FOOTER */
-.attribution { font-size: 11px; text-align: center; }
+.attribution { font-size: 11px; text-align: center; padding:18px}
 .attribution a { color: hsl(228, 45%, 44%); }
 
 /* UTILITY */
@@ -158,3 +159,77 @@ body {
 .articleFooterIconsHide {
     bottom: -100px;
 }
+.shadow{
+    -webkit-box-shadow: 0px 18px 20px 5px rgba(108,127,151,0.25);
+-moz-box-shadow: 0px 18px 20px 5px rgba(108,127,151,0.25);
+box-shadow: 0px 18px 20px 5px rgba(108,127,151,0.25);
+}
+
+@media only screen and (min-width: 1200px){
+    .article{
+        width: 460px; /* 750 - 290 px */
+        height: 280px;
+        overflow: visible;
+        padding-left: 290px;
+        position: relative;
+    }
+    .articleMedia {
+    width: 290px;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 10px 0 0 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    }
+    .articleBody{
+        padding:40px 40px 0 40px;
+    }
+    .articleMedia img {
+        height: 100%;
+    }
+    .articleBody {
+        height: 100%;
+        
+    }
+    .articleBodyTitle{
+        font-size: 20px;
+    }
+    .articleBodyText{
+        height: 50px;
+    }
+    .articleFooter{
+        padding: 0 40px 20px 40px;
+    }
+    .articleFooterIcons{
+        position: absolute;
+        right: -72px; 
+        top: -60px;
+        z-index: 1;
+        width: 250px;
+        height: 55px;
+        border-radius: 10px;
+        padding: 0;
+        justify-content: space-evenly;
+        transition: opacity 0.5s;
+        transition: top 0.5s ease-out;
+    }
+
+    .articleFooterIcons:after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -10px;
+        border-width: 7px;
+        border-style: solid;
+        border-color:  hsl(214, 17%, 51%) transparent transparent transparent;
+     }
+    .articleFooterIconsHide {
+        opacity: 0;
+        top: -55px
+    }
+}
+
+
+
