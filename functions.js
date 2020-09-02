@@ -16,7 +16,19 @@ document.getElementById("articleFooter-1").setAttribute("src", data.authorAvatar
 
 function toggleShareHandler (shareId,iconsId){
     var icons = document.querySelector('#'+iconsId);
-    icons.classList.toggle('articleFooterIconsHide');
     var toggler = document.querySelector('#'+shareId);
-    toggler.classList.toggle('articleFooterShareActive');
+    if(toggleShare){
+        icons.classList.toggle('articleFooterIconsHide');
+        setTimeout(()=>{
+            icons.classList.toggle('hide');
+            toggler.classList.toggle('articleFooterShareActive');
+        },500);
+    }else{
+        icons.classList.toggle('hide');
+        setTimeout(()=>{
+            icons.classList.toggle('articleFooterIconsHide');
+            toggler.classList.toggle('articleFooterShareActive');
+        },100);
+    }
+    toggleShare = ! toggleShare;
 }
